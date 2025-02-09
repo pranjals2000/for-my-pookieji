@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Date Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+        h1 {
+            color: #ff4d6d;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background: #ff4d6d;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #e63950;
+        }
+        .button.secondary {
+            background: #999;
+        }
+        .button.secondary:hover {
+            background: #777;
+        }
+    </style>
+    <script>
+        let messages = ["Please? 🥹", "Are you sure? 🥺", "I’ll bring chocolates! 🍫", "How about a surprise? 🎁", "One date won’t hurt! 😘"];
+        let index = 0;
+        function changeText(button) {
+            if (index < messages.length) {
+                button.innerText = messages[index];
+                index++;
+            } else {
+                alert("I won't give up, but I still love you! ❤️");
+            }
+        }
+        function sendWhatsApp() {
+            let phoneNumber = "+917869367911"; // Replace with your phone number
+            let message = encodeURIComponent("Yes, I'd love to go out on a date with you <Please add your I Love you here pookieji>");
+            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Go on a Date With Me? <span class="heart">❤</span></h1>
+        <p>Hey love, I want to spend a beautiful evening with you, just us, laughing and making memories. Will you be my date?</p>
+        <a href="#" class="button" onclick="sendWhatsApp()">Yes, of course!</a>
+        <br>
+        <a href="#" class="button secondary" onclick="changeText(this)">Maybe another time</a>
+    </div>
+</body>
+</html>
